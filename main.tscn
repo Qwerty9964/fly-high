@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dhdn01icbc314"]
+
+[ext_resource type="PackedScene" uid="uid://c1d0vkjmdaj0j" path="res://node_3d.tscn" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://bpy8wwxlx4g6n" path="res://node_3d.gd" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cnukwix0l3cqr" path="res://ImageToStl.com_Mobile+Launcher+(pad+only)/Mobile Launcher (pad only).gltf" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://gefxp5635qkr" path="res://ground.tscn" id="4_1bvp3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdbf6"]
+albedo_color = Color(0.20392157, 0.24705882, 0.2901961, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bdbf6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t7tip"]
+
+[sub_resource type="Sky" id="Sky_yh8r4"]
+sky_material = SubResource("ProceduralSkyMaterial_t7tip")
+
+[sub_resource type="Environment" id="Environment_bdbf6"]
+background_mode = 2
+sky = SubResource("Sky_yh8r4")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 15.86
+
+[node name="Node3D" type="Node3D" unique_id=1561073654]
+
+[node name="rocket" parent="." unique_id=359267566 instance=ExtResource("1_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036162853, 4.3473454, -0.27132106)
+script = ExtResource("2_1bvp3")
+
+[node name="Camera3D" type="Camera3D" parent="rocket" unique_id=46454884]
+transform = Transform3D(0.3795384, -0.4909319, 0.78417873, 0.016683742, 0.8510935, 0.52474874, -0.92502546, -0.18607926, 0.33121336, 14.999077, 11.777969, 6.8780413)
+fov = 70.2
+
+[node name="rocketpad" parent="." unique_id=1115138343 instance=ExtResource("3_lquwl")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="rocketpad" unique_id=371089574]
+transform = Transform3D(0.11129698, 0, 0, 0, 0.99999976, 0, 0, 0, 0.23958313, 0, 0.29543537, 0)
+material_override = SubResource("StandardMaterial3D_bdbf6")
+mesh = SubResource("PlaneMesh_bdbf6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=125370618]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=547091482]
+z_index = -10
+z_as_relative = false
+offset_left = 36.0
+offset_top = 103.0
+offset_right = 269.0
+offset_bottom = 469.0
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel" unique_id=451448227]
+z_index = 100
+layout_mode = 0
+offset_left = 83.0
+offset_top = 56.0
+offset_right = 157.0
+offset_bottom = 99.0
+text = "LAUNCH"
+
+[node name="ground" parent="." unique_id=578226511 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1871796474]
+environment = SubResource("Environment_bdbf6")
+
+[connection signal="button_down" from="CanvasLayer/Panel/Button" to="rocket" method="_on_button_button_down"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://gefxp5635qkr"]
+
+[ext_resource type="Texture2D" uid="uid://dl8tqm4rse2wg" path="res://forrest_ground_01_4k.gltf/textures/forrest_ground_01_diff_4k.jpg" id="1_yh8r4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_va7vk"]
+albedo_texture = ExtResource("1_yh8r4")
+uv1_scale = Vector3(100, 100, 100)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4mf0t"]
+
+[node name="ground" type="Node3D" unique_id=578226511]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1391767877]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_va7vk")
+mesh = SubResource("PlaneMesh_4mf0t")
