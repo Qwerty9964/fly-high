@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://c1d0vkjmdaj0j"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_va7vk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3442d"]
+top_radius = 0.0
+height = 1.7
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bdbf6"]
+bottom_radius = 0.8
+height = 0.55
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4mf0t"]
+top_radius = 0.33
+bottom_radius = 0.33
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7j0m1"]
+top_radius = 0.8
+bottom_radius = 1.0
+height = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_raro3"]
+top_radius = 1.0
+bottom_radius = 1.105
+
+[sub_resource type="PrismMesh" id="PrismMesh_bdbf6"]
+
+[node name="rocket" type="Node3D" unique_id=359267566]
+
+[node name="bodycyl" type="MeshInstance3D" parent="." unique_id=913639923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3007946, 0)
+mesh = SubResource("CylinderMesh_va7vk")
+
+[node name="nosecone" type="MeshInstance3D" parent="." unique_id=975721146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.038286, 0)
+mesh = SubResource("CylinderMesh_3442d")
+
+[node name="transcone" type="MeshInstance3D" parent="." unique_id=1277934051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.107788, 0)
+mesh = SubResource("CylinderMesh_bdbf6")
+
+[node name="fueltank1" type="MeshInstance3D" parent="." unique_id=174495445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28169233, 3.83, -0.31375325)
+mesh = SubResource("CylinderMesh_4mf0t")
+
+[node name="fueltank2" type="MeshInstance3D" parent="." unique_id=1267638733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2616153, 3.83, -0.35081565)
+mesh = SubResource("CylinderMesh_4mf0t")
+
+[node name="fueltank3" type="MeshInstance3D" parent="." unique_id=1389061114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26592395, 3.8321028, 0.36424524)
+mesh = SubResource("CylinderMesh_4mf0t")
+
+[node name="fueltank4" type="MeshInstance3D" parent="." unique_id=102118174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259, 3.83, 0.35)
+mesh = SubResource("CylinderMesh_4mf0t")
+
+[node name="transcone2" type="MeshInstance3D" parent="." unique_id=1790675922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4506576, 0)
+mesh = SubResource("CylinderMesh_7j0m1")
+
+[node name="engine" type="MeshInstance3D" parent="." unique_id=139650785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.069478, 0)
+mesh = SubResource("CylinderMesh_raro3")
+
+[node name="fin1" type="MeshInstance3D" parent="engine" unique_id=732614292]
+transform = Transform3D(-0.014580523, 0, 0.1937408, 0, 1, 0, -1.0115165, 0, -0.0027926804, 0, 0.32352197, -0.9767866)
+mesh = SubResource("PrismMesh_bdbf6")
+
+[node name="fin2" type="MeshInstance3D" parent="engine" unique_id=1394582533]
+transform = Transform3D(1.0145208, 0.00030011724, 0.002781138, 0, 0.98517686, -0.0027815616, -0.017708525, 0.017193707, 0.15933129, 0.998, 0.23052192, 0.009)
+mesh = SubResource("PrismMesh_bdbf6")
+
+[node name="fin3" type="MeshInstance3D" parent="engine" unique_id=2134012431]
+transform = Transform3D(0.032903124, 0.017961193, -0.15122075, -0.0005910747, 0.9998387, 0.0027165432, 1.0408643, 0, 0.004781834, -0.01850617, 0.24676394, 1.0103273)
+mesh = SubResource("PrismMesh_bdbf6")
+
+[node name="fin4" type="MeshInstance3D" parent="engine" unique_id=96459151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15817422, -0.9733889, 0.23052192, -0.02)
+mesh = SubResource("PrismMesh_bdbf6")
