@@ -1,6 +1,6 @@
 extends Camera3D
 
-var strength=5
+var strength=6
 var go = false
 
 # Called when the node enters the scene tree for the first time.
@@ -11,14 +11,15 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	print(strength)
+	print(go)
 	if go==true:
 		position.x+=(randf_range(-0.01,0.01)*strength)
 		position.y+=(randf_range(-0.01,0.01)*strength)
 		position.z+=(randf_range(-0.01,0.01)*strength)
 	
-	strength-=0.2*delta
+		strength-=0.15*delta
 	
-	strength = max(strength, 0.5)
+		strength = max(strength, 0.5)
 	
 
 func _on_button_button_down() -> void:

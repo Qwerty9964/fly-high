@@ -9,21 +9,25 @@ var fuelmass=0.6
 var mass = 1.2
 var thrust=12
 
+var light 
+var particles  
+
+signal newvelocity
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	light = $enginelight
+	particles = $particles
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	newvelocity.emit(velocity)
+	
 	if launch == true:
-		
-		
-		print(mass)
-		print(velocity)
-		print(acceleration)
+			
 		
 		acceleration=0
 		acceleration-=gravity
@@ -35,6 +39,12 @@ func _process(delta: float) -> void:
 		
 		if engine == true:
 			velocity += (thrust/mass) * delta
+			
+		if fuelmass<=0:
+			fuelmass=0
+			engine=false
+			particles.emitting = false
+			light.light_energy = 0
 	
 		velocity+= acceleration * delta
 		
