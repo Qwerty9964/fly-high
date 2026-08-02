@@ -41,13 +41,21 @@ cache/0/70/0/underline_position = 0.0
 cache/0/70/0/underline_thickness = 0.0
 cache/0/70/0/scale = 1.0
 
+[sub_resource type="MeshTexture" id="MeshTexture_272bh"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t7tip"]
+sky_cover = SubResource("MeshTexture_272bh")
+sky_cover_modulate = Color(0, 1, 1, 1)
+ground_bottom_color = Color(0.26666668, 0.30588236, 0.25882354, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+ground_curve = 0.0118921
 
 [sub_resource type="Sky" id="Sky_yh8r4"]
 sky_material = SubResource("ProceduralSkyMaterial_t7tip")
 
 [sub_resource type="Environment" id="Environment_bdbf6"]
 background_mode = 2
+background_color = Color(0.6556008, 0.6556009, 0.6556008, 1)
 sky = SubResource("Sky_yh8r4")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 15.86
@@ -60,7 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036162853, 4.3473454, -0.27
 script = ExtResource("2_1bvp3")
 
 [node name="Camera3D" type="Camera3D" parent="rocket" unique_id=46454884]
-transform = Transform3D(0.3795384, -0.4909319, 0.78417873, 0.016683742, 0.8510935, 0.52474874, -0.92502546, -0.18607926, 0.33121336, 14.999077, 11.777969, 6.8780413)
+transform = Transform3D(0.40239117, -0.3629926, 0.8404271, 0.0034208335, 0.91861993, 0.39512736, -0.9154613, -0.15612082, 0.37088627, 14.999077, 6.1269884, 6.8780413)
 fov = 70.2
 script = ExtResource("3_7mycd")
 
@@ -129,12 +137,32 @@ LAUNCH"
 metadata/_edit_use_anchors_ = true
 
 [node name="velocitylab" type="Label" parent="ui" unique_id=260208282]
-offset_left = 90.0
-offset_top = 223.0
-offset_right = 130.0
-offset_bottom = 246.0
-text = "VELOCITY: 0m/s
-"
+offset_left = 53.0
+offset_top = 232.0
+offset_right = 174.0
+offset_bottom = 281.0
+text = "VELOCITY: 0m/s"
+
+[node name="accelerationlab" type="Label" parent="ui" unique_id=572330676]
+offset_left = 53.0
+offset_top = 283.0
+offset_right = 232.0
+offset_bottom = 306.0
+text = "ACCELERATION: 0m/s/s"
+
+[node name="masslab" type="Label" parent="ui" unique_id=1027068004]
+offset_left = 53.0
+offset_top = 258.0
+offset_right = 146.0
+offset_bottom = 281.0
+text = "MASS: 1.2kg"
+
+[node name="heightlab" type="Label" parent="ui" unique_id=413448295]
+offset_left = 53.0
+offset_top = 308.0
+offset_right = 145.0
+offset_bottom = 331.0
+text = "HEIGHT: 0m"
 
 [node name="ground" parent="." unique_id=578226511 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)

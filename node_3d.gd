@@ -13,6 +13,9 @@ var light
 var particles  
 
 signal newvelocity
+signal newacceleration
+signal newmass
+signal newheight
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,11 +27,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	newvelocity.emit(velocity)
-	
 	if launch == true:
-			
-		
 		acceleration=0
 		acceleration-=gravity
 		 
@@ -36,20 +35,23 @@ func _process(delta: float) -> void:
 		mass = fuelmass+bodymass
 		
 		
-		
-		if engine == true:
-			velocity += (thrust/mass) * delta
-			
-		if fuelmass<=0:
+		if engine and fuelmass>=0:
+			acceleration += (thrust/mass) 
+		else:
 			fuelmass=0
 			engine=false
 			particles.emitting = false
 			light.light_energy = 0
+			
 	
 		velocity+= acceleration * delta
 		
-		
 		position.y+=velocity *delta 
+		
+		newacceleration.emit(acceleration)
+		newmass.emit(mass)
+		newvelocity.emit(velocity)
+		newheight.emit(position.y)
 
 
 func _on_button_button_down() -> void:

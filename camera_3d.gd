@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		position.y+=(randf_range(-0.01,0.01)*strength)
 		position.z+=(randf_range(-0.01,0.01)*strength)
 	
-		strength-=0.15*delta
+		strength-=0.19*delta
 	
 		strength = max(strength, 0.5)
 	
