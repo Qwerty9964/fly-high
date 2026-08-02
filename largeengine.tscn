@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://5rn868ksxv4k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywunv"]
+albedo_color = Color(0.3515629, 0.3515629, 0.35156286, 1)
+metallic = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bdbf6"]
+material = SubResource("StandardMaterial3D_ywunv")
+top_radius = 0.8
+bottom_radius = 1.0
+height = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evof2"]
+albedo_color = Color(0.20033002, 0.20033002, 0.20032999, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_4mf0t"]
+material = SubResource("StandardMaterial3D_evof2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2n1l"]
+albedo_color = Color(0.20511743, 0.20511743, 0.20511743, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_va7vk"]
+material = SubResource("StandardMaterial3D_d2n1l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvkyp"]
+albedo_color = Color(0.20272335, 0.20272335, 0.20272332, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_3442d"]
+material = SubResource("StandardMaterial3D_tvkyp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipv3l"]
+albedo_color = Color(0.20511743, 0.20511743, 0.20511743, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_7j0m1"]
+material = SubResource("StandardMaterial3D_ipv3l")
+
+[node name="largeengine" type="Node3D" unique_id=1778855107]
+
+[node name="engine" type="MeshInstance3D" parent="." unique_id=646740586]
+mesh = SubResource("CylinderMesh_bdbf6")
+
+[node name="fin" type="MeshInstance3D" parent="." unique_id=917077401]
+transform = Transform3D(-4.3711385e-08, 0, -0.23626494, 0, 1, 0, 0.99999994, 0, -1.0327469e-08, 0, 0, 0.6823244)
+mesh = SubResource("PrismMesh_4mf0t")
+
+[node name="fin2" type="MeshInstance3D" parent="." unique_id=342349703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.22399206, 0.63179183, 0, 0)
+mesh = SubResource("PrismMesh_va7vk")
+
+[node name="fin3" type="MeshInstance3D" parent="." unique_id=1146478108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.27449566, -0.6516334, 0, 0)
+mesh = SubResource("PrismMesh_3442d")
+
+[node name="fin4" type="MeshInstance3D" parent="." unique_id=1450918189]
+transform = Transform3D(-4.371139e-08, 0, 0.2541085, 0, 1, 0, -1, 0, -1.1107435e-08, 0, 0, -0.6288569)
+mesh = SubResource("PrismMesh_7j0m1")

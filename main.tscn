@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dhdn01icbc314"]
 
 [ext_resource type="Script" uid="uid://dd1jrbuph11uu" path="res://main.gd" id="1_272bh"]
-[ext_resource type="PackedScene" uid="uid://c1d0vkjmdaj0j" path="res://node_3d.tscn" id="1_h2yge"]
-[ext_resource type="Script" uid="uid://bpy8wwxlx4g6n" path="res://node_3d.gd" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c1d0vkjmdaj0j" path="res://rocket.tscn" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://bpy8wwxlx4g6n" path="res://rocket.gd" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://dtawefctdys1d" path="res://camera_3d.gd" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cnukwix0l3cqr" path="res://ImageToStl.com_Mobile+Launcher+(pad+only)/Mobile Launcher (pad only).gltf" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://gefxp5635qkr" path="res://ground.tscn" id="4_1bvp3"]

@@ -26,6 +26,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	newheight.emit(position.y)
 	
 	if launch == true:
 		acceleration=0
@@ -51,7 +52,7 @@ func _process(delta: float) -> void:
 		newacceleration.emit(acceleration)
 		newmass.emit(mass)
 		newvelocity.emit(velocity)
-		newheight.emit(position.y)
+		
 
 
 func _on_button_button_down() -> void:
