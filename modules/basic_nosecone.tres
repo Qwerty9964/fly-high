@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="nosecone_module" format=3 uid="uid://dotqqxh1jdilu"]
+
+[ext_resource type="Script" uid="uid://ddpybwm8u56jy" path="res://resources/nosecone_module.gd" id="1_7ywh2"]
+[ext_resource type="PackedScene" uid="uid://dc2hodmwkrmqv" path="res://rocket_parts/basiccone.tscn" id="1_ud7an"]
+
+[resource]
+script = ExtResource("1_7ywh2")
+name = "basic_nosecone"
+mass = 3.0
+module_scene = ExtResource("1_ud7an")
+metadata/_custom_type_script = "uid://ddpybwm8u56jy"

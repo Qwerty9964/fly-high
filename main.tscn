@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://dkpjcgjvd5cdb" path="res://cautionborder (250 x 150 px).png" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://2cys6xf5vmls" path="res://modrocket.tscn" id="8_4c57u"]
 [ext_resource type="Script" uid="uid://b6030w3xvp1by" path="res://modrocket.gd" id="9_efxa6"]
-[ext_resource type="Resource" uid="uid://da3nnbfao2brv" path="res://modules/basic_engine.tres" id="10_dg77c"]
+[ext_resource type="Resource" uid="uid://da3nnbfao2brv" path="res://modules/small_engine.tres" id="10_dg77c"]
+[ext_resource type="Resource" uid="uid://c0ottbuj28iuy" path="res://modules/small_tank.tres" id="11_ycdy4"]
+[ext_resource type="Resource" uid="uid://nb0oumr8c8p0" path="res://modules/basic_body.tres" id="12_w48qg"]
+[ext_resource type="Resource" uid="uid://dotqqxh1jdilu" path="res://modules/basic_nosecone.tres" id="13_vivmo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdbf6"]
 albedo_color = Color(0.20392157, 0.24705882, 0.2901961, 1)
@@ -70,11 +73,6 @@ script = ExtResource("1_272bh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036162853, 4.3473454, 13.728679)
 visible = false
 script = ExtResource("2_1bvp3")
-
-[node name="Camera3D" type="Camera3D" parent="rocket" unique_id=46454884]
-transform = Transform3D(0.40239117, -0.3629926, 0.8404271, 0.0034208335, 0.91861993, 0.39512736, -0.9154613, -0.15612082, 0.37088627, 14.999077, 6.1269884, 6.8780413)
-fov = 70.2
-script = ExtResource("3_7mycd")
 
 [node name="rocketpad" parent="." unique_id=1115138343 instance=ExtResource("3_lquwl")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
@@ -181,6 +179,14 @@ light_energy = 5.336
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, 0)
 script = ExtResource("9_efxa6")
 engine = ExtResource("10_dg77c")
+fuel_tank = ExtResource("11_ycdy4")
+body = ExtResource("12_w48qg")
+nosecone = ExtResource("13_vivmo")
+
+[node name="Camera3D" type="Camera3D" parent="modrocket" unique_id=46454884]
+transform = Transform3D(0.40239123, -0.36299264, 0.8404271, 0.003420834, 0.91862, 0.39512742, -0.9154614, -0.15612084, 0.37088633, 15.03524, 6.1743336, 8.741638)
+fov = 70.2
+script = ExtResource("3_7mycd")
 
 [connection signal="button_down" from="ui/Cautionborder(250X150Px)/ColorRect/Button" to="rocket" method="_on_button_button_down"]
-[connection signal="button_down" from="ui/Cautionborder(250X150Px)/ColorRect/Button" to="rocket/Camera3D" method="_on_button_button_down"]
+[connection signal="button_down" from="ui/Cautionborder(250X150Px)/ColorRect/Button" to="modrocket/Camera3D" method="_on_button_button_down"]

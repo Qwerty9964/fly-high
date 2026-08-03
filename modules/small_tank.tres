@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="fuel_tank_module" format=3 uid="uid://c0ottbuj28iuy"]
+
+[ext_resource type="PackedScene" uid="uid://deo0q2dujokla" path="res://rocket_parts/fuelsmall.tscn" id="1_benno"]
+[ext_resource type="Script" uid="uid://di5ui7xfqb0ac" path="res://resources/fuel_tank_module.gd" id="2_yvk3f"]
+
+[resource]
+script = ExtResource("2_yvk3f")
+fuel_capacity = 45.0
+name = "small_tank"
+mass = 2.0
+module_scene = ExtResource("1_benno")
+metadata/_custom_type_script = "uid://di5ui7xfqb0ac"

@@ -20,19 +20,36 @@ signal newheight
 
 
 @export var engine: engine_module
+@export var fuel_tank: fuel_tank_module
+@export var body: body_module
+@export var nosecone: nosecone_module
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	modules_initiate()
 	modules_configure()
-	
-	var engine_instance=engine.module_scene.instantiate()
-	$engineslot.add_child(engine_instance)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
+func modules_initiate() -> void:
+	var engine_instance=engine.module_scene.instantiate()
+	$engineslot.add_child(engine_instance)
 	
+	var fuel_tank_instance=fuel_tank.module_scene.instantiate()
+	$fueltankslot.add_child(fuel_tank_instance)
+	
+	var body_instance=body.module_scene.instantiate()
+	$bodyslot.add_child(body_instance)
+	
+	var nosecone_instance=nosecone.module_scene.instantiate()
+	$noseconeslot.add_child(nosecone_instance)
+
 func modules_configure() -> void:
-	mass+=engine.mass
+	mass=engine.mass+fuel_tank.mass+body.mass+nosecone.mass
+	thrust=engine.thrust
+	
+
 	

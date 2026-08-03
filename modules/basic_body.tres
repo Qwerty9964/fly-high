@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="body_module" format=3 uid="uid://nb0oumr8c8p0"]
+
+[ext_resource type="Script" uid="uid://bemybmvfayygi" path="res://resources/body_module.gd" id="1_3k82d"]
+[ext_resource type="PackedScene" uid="uid://0dqak00ujdte" path="res://rocket_parts/basicbody.tscn" id="1_io7o1"]
+
+[resource]
+script = ExtResource("1_3k82d")
+payload_limit = 3.0
+structural_speed_limit = 150.0
+name = "basic_body"
+mass = 10.0
+module_scene = ExtResource("1_io7o1")
+metadata/_custom_type_script = "uid://bemybmvfayygi"

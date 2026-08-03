@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://0dqak00ujdte"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bdbf6"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_bdbf6"]
+inner_radius = 0.45
+outer_radius = 0.6
+
+[sub_resource type="TorusMesh" id="TorusMesh_4mf0t"]
+inner_radius = 0.4
+outer_radius = 0.55
+
+[node name="basicbody" type="Node3D" unique_id=1132995509]
+
+[node name="cylinder" type="MeshInstance3D" parent="." unique_id=1265786442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_bdbf6")
+
+[node name="bottomring" type="MeshInstance3D" parent="." unique_id=381792632]
+mesh = SubResource("TorusMesh_bdbf6")
+
+[node name="topring" type="MeshInstance3D" parent="." unique_id=620026719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7115748, 0)
+mesh = SubResource("TorusMesh_4mf0t")
+
+[node name="topring2" type="MeshInstance3D" parent="." unique_id=26311232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5913825, 0)
+mesh = SubResource("TorusMesh_4mf0t")
