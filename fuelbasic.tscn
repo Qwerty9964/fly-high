@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c1nosv7lwa7oq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdbf6"]
+albedo_color = Color(1, 0.33333334, 0.19607843, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bdbf6"]
+material = SubResource("StandardMaterial3D_bdbf6")
+top_radius = 0.6
+bottom_radius = 0.6
+height = 1.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mf0t"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bdbf6"]
+material = SubResource("StandardMaterial3D_4mf0t")
+
+[node name="fuelbasic" type="Node3D" unique_id=1693877630]
+
+[node name="tank" type="MeshInstance3D" parent="." unique_id=497182908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = SubResource("CylinderMesh_bdbf6")
+
+[node name="stripes" type="MeshInstance3D" parent="." unique_id=395916161]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0.7219088, 0)
+mesh = SubResource("BoxMesh_bdbf6")

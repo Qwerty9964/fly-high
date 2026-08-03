@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://deo0q2dujokla"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mf0t"]
+albedo_color = Color(1, 0.3325228, 0.20397204, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bdbf6"]
+material = SubResource("StandardMaterial3D_4mf0t")
+height = 0.5
+
+[node name="fuelsmall" type="Node3D" unique_id=57439685]
+
+[node name="tank" type="MeshInstance3D" parent="." unique_id=1137938100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("CylinderMesh_bdbf6")
