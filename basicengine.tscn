@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b3igv2qa10vtf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qcl7"]
-albedo_color = Color(0.42493093, 0.42493093, 0.42493087, 1)
+albedo_color = Color(0.16924536, 0.16924527, 0.16924521, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_bdbf6"]
 material = SubResource("StandardMaterial3D_7qcl7")
@@ -11,5 +11,6 @@ height = 0.6
 
 [node name="basicengine" type="Node3D" unique_id=285323257]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1028154891]
+[node name="engine" type="MeshInstance3D" parent="." unique_id=1028154891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 mesh = SubResource("CylinderMesh_bdbf6")

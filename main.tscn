@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cnukwix0l3cqr" path="res://ImageToStl.com_Mobile+Launcher+(pad+only)/Mobile Launcher (pad only).gltf" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://gefxp5635qkr" path="res://ground.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dkpjcgjvd5cdb" path="res://cautionborder (250 x 150 px).png" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://2cys6xf5vmls" path="res://modrocket.tscn" id="8_4c57u"]
+[ext_resource type="Script" uid="uid://b6030w3xvp1by" path="res://modrocket.gd" id="9_efxa6"]
+[ext_resource type="Resource" uid="uid://da3nnbfao2brv" path="res://modules/basic_engine.tres" id="10_dg77c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdbf6"]
 albedo_color = Color(0.20392157, 0.24705882, 0.2901961, 1)
@@ -64,7 +67,8 @@ ambient_light_energy = 15.86
 script = ExtResource("1_272bh")
 
 [node name="rocket" parent="." unique_id=359267566 instance=ExtResource("1_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036162853, 4.3473454, -0.27132106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036162853, 4.3473454, 13.728679)
+visible = false
 script = ExtResource("2_1bvp3")
 
 [node name="Camera3D" type="Camera3D" parent="rocket" unique_id=46454884]
@@ -172,6 +176,11 @@ environment = SubResource("Environment_bdbf6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1397040998]
 light_energy = 5.336
+
+[node name="modrocket" parent="." unique_id=1832159564 instance=ExtResource("8_4c57u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, 0)
+script = ExtResource("9_efxa6")
+engine = ExtResource("10_dg77c")
 
 [connection signal="button_down" from="ui/Cautionborder(250X150Px)/ColorRect/Button" to="rocket" method="_on_button_button_down"]
 [connection signal="button_down" from="ui/Cautionborder(250X150Px)/ColorRect/Button" to="rocket/Camera3D" method="_on_button_button_down"]

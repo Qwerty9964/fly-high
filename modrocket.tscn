@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://2cys6xf5vmls"]
+
+[node name="modrocket" type="Node3D" unique_id=1832159564]
+
+[node name="engineslot" type="Node3D" parent="." unique_id=1299801466]
+
+[node name="fueltankslot" type="Node3D" parent="." unique_id=118856534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97345686, 0)
+
+[node name="bodyslot" type="Node3D" parent="." unique_id=718684107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7027984, 0)
+
+[node name="noseconeslot" type="Node3D" parent="." unique_id=1985910598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4953213, 0)
