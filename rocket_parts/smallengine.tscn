@@ -11,4 +11,5 @@ height = 0.3
 [node name="smallengine" type="Node3D" unique_id=661321935]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1270567885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 mesh = SubResource("CylinderMesh_4mf0t")

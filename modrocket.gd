@@ -46,6 +46,10 @@ func modules_initiate() -> void:
 	
 	var nosecone_instance=nosecone.module_scene.instantiate()
 	$noseconeslot.add_child(nosecone_instance)
+	
+	$fueltankslot.position.y=engine.height
+	$bodyslot.position.y=fuel_tank.height+engine.height
+	$noseconeslot.position.y=body.height+fuel_tank.height+engine.height
 
 func modules_configure() -> void:
 	mass=engine.mass+fuel_tank.mass+body.mass+nosecone.mass

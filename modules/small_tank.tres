@@ -9,4 +9,5 @@ fuel_capacity = 45.0
 name = "small_tank"
 mass = 2.0
 module_scene = ExtResource("1_benno")
+height = 0.5
 metadata/_custom_type_script = "uid://di5ui7xfqb0ac"

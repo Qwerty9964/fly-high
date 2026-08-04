@@ -9,5 +9,7 @@ thrust = 200.0
 fuel_burn_rate = 0.09
 name = "small_engine"
 mass = 5.0
+cost = 0.3
 module_scene = ExtResource("1_7f62p")
+height = 0.3
 metadata/_custom_type_script = "uid://h6012ll80ofi"

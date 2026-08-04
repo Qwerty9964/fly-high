@@ -10,7 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://2cys6xf5vmls" path="res://modrocket.tscn" id="8_4c57u"]
 [ext_resource type="Script" uid="uid://b6030w3xvp1by" path="res://modrocket.gd" id="9_efxa6"]
 [ext_resource type="Resource" uid="uid://da3nnbfao2brv" path="res://modules/small_engine.tres" id="10_dg77c"]
-[ext_resource type="Resource" uid="uid://c0ottbuj28iuy" path="res://modules/small_tank.tres" id="11_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://deo0q2dujokla" path="res://rocket_parts/fuelsmall.tscn" id="10_w48qg"]
+[ext_resource type="Script" uid="uid://di5ui7xfqb0ac" path="res://resources/fuel_tank_module.gd" id="11_vivmo"]
 [ext_resource type="Resource" uid="uid://nb0oumr8c8p0" path="res://modules/basic_body.tres" id="12_w48qg"]
 [ext_resource type="Resource" uid="uid://dotqqxh1jdilu" path="res://modules/basic_nosecone.tres" id="13_vivmo"]
 
@@ -65,6 +66,15 @@ background_color = Color(0.6556008, 0.6556009, 0.6556008, 1)
 sky = SubResource("Sky_yh8r4")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 15.86
+
+[sub_resource type="Resource" id="Resource_2cqfq"]
+script = ExtResource("11_vivmo")
+fuel_capacity = 45.0
+name = "small_tank"
+mass = 2.0
+module_scene = ExtResource("10_w48qg")
+height = 0.5
+metadata/_custom_type_script = "uid://di5ui7xfqb0ac"
 
 [node name="Node3D" type="Node3D" unique_id=1561073654]
 script = ExtResource("1_272bh")
@@ -176,10 +186,10 @@ environment = SubResource("Environment_bdbf6")
 light_energy = 5.336
 
 [node name="modrocket" parent="." unique_id=1832159564 instance=ExtResource("8_4c57u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, 0)
 script = ExtResource("9_efxa6")
 engine = ExtResource("10_dg77c")
-fuel_tank = ExtResource("11_ycdy4")
+fuel_tank = SubResource("Resource_2cqfq")
 body = ExtResource("12_w48qg")
 nosecone = ExtResource("13_vivmo")
 
