@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="body_module" format=3 uid="uid://bcfmvs1ut3kcy"]
+
+[ext_resource type="PackedScene" uid="uid://dpxbudidxpe3d" path="res://rocket_parts/advancedbody.tscn" id="1_8blvw"]
+[ext_resource type="Script" uid="uid://bemybmvfayygi" path="res://resources/body_module.gd" id="1_bp4k1"]
+
+[resource]
+script = ExtResource("1_bp4k1")
+mass = 25.0
+module_scene = ExtResource("1_8blvw")
+height = 2.0
+metadata/_custom_type_script = "uid://bemybmvfayygi"

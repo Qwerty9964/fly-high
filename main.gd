@@ -7,10 +7,10 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$rocket.newvelocity.connect(_on_newvelocity)
-	$rocket.newacceleration.connect(_on_newacceleration)
-	$rocket.newmass.connect(_on_newmass)
-	$rocket.newheight.connect(_on_newheight)
+	$modrocket.newvelocity.connect(_on_newvelocity)
+	$modrocket.newacceleration.connect(_on_newacceleration)
+	$modrocket.newmass.connect(_on_newmass)
+	$modrocket.newheight.connect(_on_newheight)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

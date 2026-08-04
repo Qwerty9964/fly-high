@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="fuel_tank_module" format=3 uid="uid://d3wnr0jdislmd"]
+
+[ext_resource type="PackedScene" uid="uid://c1nosv7lwa7oq" path="res://rocket_parts/fuelbasic.tscn" id="1_mdkvv"]
+[ext_resource type="Script" uid="uid://di5ui7xfqb0ac" path="res://resources/fuel_tank_module.gd" id="1_xabrf"]
+
+[resource]
+script = ExtResource("1_xabrf")
+fuel_capacity = 105.0
+mass = 5.0
+module_scene = ExtResource("1_mdkvv")
+height = 1.4
+metadata/_custom_type_script = "uid://di5ui7xfqb0ac"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="nosecone_module" format=3 uid="uid://6tv0yf63us0"]
+
+[ext_resource type="PackedScene" uid="uid://db5iq10wg08s2" path="res://rocket_parts/raptorcone.tscn" id="1_yhd7s"]
+[ext_resource type="Script" uid="uid://ddpybwm8u56jy" path="res://resources/nosecone_module.gd" id="1_ym86t"]
+
+[resource]
+script = ExtResource("1_ym86t")
+name = "raptor_cone"
+mass = 6.0
+module_scene = ExtResource("1_yhd7s")
+height = 1.3
+metadata/_custom_type_script = "uid://ddpybwm8u56jy"

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dpxbudidxpe3d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_va7vk"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bdbf6"]
+material = SubResource("StandardMaterial3D_va7vk")
+bottom_radius = 0.65
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3442d"]
+albedo_color = Color(0.15247649, 0.15247649, 0.15247646, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4mf0t"]
+material = SubResource("StandardMaterial3D_3442d")
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mf0t"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bdbf6"]
+material = SubResource("StandardMaterial3D_4mf0t")
+size = Vector3(0.85, 1, 0.85)
+
+[node name="advancedbody" type="Node3D" unique_id=985377378]
+
+[node name="bottomtrans" type="MeshInstance3D" parent="." unique_id=1725494744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("CylinderMesh_bdbf6")
+
+[node name="body" type="MeshInstance3D" parent="." unique_id=66404508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+mesh = SubResource("CylinderMesh_4mf0t")
+
+[node name="stripes" type="MeshInstance3D" parent="." unique_id=1867036073]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 1.0331964, 0)
+mesh = SubResource("BoxMesh_bdbf6")

@@ -9,6 +9,8 @@ var bodymass=0
 var fuelmass=0
 var mass = 0
 var thrust= 0
+var fuelburnrate = 0
+var og_mass
 
 var light 
 var particles  
@@ -28,11 +30,45 @@ signal newheight
 func _ready() -> void:
 	modules_initiate()
 	modules_configure()
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	newheight.emit(position.y)
+	
+	if launch == true:
+		acceleration=0
+		acceleration-=gravity
+		 
+		fuelmass-= fuelburnrate*delta
+		mass=fuelmass+og_mass
+	
+		if engine and fuelmass>=0:
+			acceleration += (thrust/mass) 
+		else:
+			fuelmass=0
+			engine_on=false
+	
+		velocity+= acceleration * delta
+		
+		position.y+=velocity *delta 
+		
+		newacceleration.emit(acceleration)
+		newmass.emit(mass)
+		newvelocity.emit(velocity)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+#helpers
 	
 func modules_initiate() -> void:
 	var engine_instance=engine.module_scene.instantiate()
@@ -54,6 +90,13 @@ func modules_initiate() -> void:
 func modules_configure() -> void:
 	mass=engine.mass+fuel_tank.mass+body.mass+nosecone.mass
 	thrust=engine.thrust
+	fuelburnrate=engine.fuel_burn_rate
+	fuelmass=fuel_tank.fuel_capacity*0.1
+	og_mass=mass
 	
 
+
+func _on_button_button_down() -> void:
+	launch=true
+	engine_on=true
 	

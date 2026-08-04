@@ -53,8 +53,3 @@ func _process(delta: float) -> void:
 		newmass.emit(mass)
 		newvelocity.emit(velocity)
 		
-
-
-func _on_button_button_down() -> void:
-	launch = true
-	engine = true

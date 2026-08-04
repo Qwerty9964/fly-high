@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="engine_module" format=3 uid="uid://bcng61p1oipg"]
+
+[ext_resource type="PackedScene" uid="uid://b3igv2qa10vtf" path="res://rocket_parts/basicengine.tscn" id="1_qufd3"]
+[ext_resource type="Script" uid="uid://h6012ll80ofi" path="res://resources/engine_module.gd" id="1_vkrs6"]
+
+[resource]
+script = ExtResource("1_vkrs6")
+thrust = 600.0
+fuel_burn_rate = 0.13
+mass = 10.0
+module_scene = ExtResource("1_qufd3")
+height = 0.6
+metadata/_custom_type_script = "uid://h6012ll80ofi"

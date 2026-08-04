@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_qfwg6")
-thrust = 200.0
+thrust = 250.0
 fuel_burn_rate = 0.09
 name = "small_engine"
 mass = 5.0

@@ -1,17 +1,14 @@
 [gd_scene format=3 uid="uid://dhdn01icbc314"]
 
 [ext_resource type="Script" uid="uid://dd1jrbuph11uu" path="res://main.gd" id="1_272bh"]
-[ext_resource type="PackedScene" uid="uid://c1d0vkjmdaj0j" path="res://rocket.tscn" id="1_h2yge"]
-[ext_resource type="Script" uid="uid://bpy8wwxlx4g6n" path="res://rocket.gd" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://dtawefctdys1d" path="res://camera_3d.gd" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cnukwix0l3cqr" path="res://ImageToStl.com_Mobile+Launcher+(pad+only)/Mobile Launcher (pad only).gltf" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://gefxp5635qkr" path="res://ground.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dkpjcgjvd5cdb" path="res://cautionborder (250 x 150 px).png" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://2cys6xf5vmls" path="res://modrocket.tscn" id="8_4c57u"]
 [ext_resource type="Script" uid="uid://b6030w3xvp1by" path="res://modrocket.gd" id="9_efxa6"]
-[ext_resource type="Resource" uid="uid://da3nnbfao2brv" path="res://modules/small_engine.tres" id="10_dg77c"]
-[ext_resource type="PackedScene" uid="uid://deo0q2dujokla" path="res://rocket_parts/fuelsmall.tscn" id="10_w48qg"]
-[ext_resource type="Script" uid="uid://di5ui7xfqb0ac" path="res://resources/fuel_tank_module.gd" id="11_vivmo"]
+[ext_resource type="Resource" uid="uid://da3nnbfao2brv" path="res://modules/small_engine.tres" id="9_w48qg"]
+[ext_resource type="Resource" uid="uid://c0ottbuj28iuy" path="res://modules/small_tank.tres" id="10_ycdy4"]
 [ext_resource type="Resource" uid="uid://nb0oumr8c8p0" path="res://modules/basic_body.tres" id="12_w48qg"]
 [ext_resource type="Resource" uid="uid://dotqqxh1jdilu" path="res://modules/basic_nosecone.tres" id="13_vivmo"]
 
@@ -67,22 +64,8 @@ sky = SubResource("Sky_yh8r4")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 15.86
 
-[sub_resource type="Resource" id="Resource_2cqfq"]
-script = ExtResource("11_vivmo")
-fuel_capacity = 45.0
-name = "small_tank"
-mass = 2.0
-module_scene = ExtResource("10_w48qg")
-height = 0.5
-metadata/_custom_type_script = "uid://di5ui7xfqb0ac"
-
 [node name="Node3D" type="Node3D" unique_id=1561073654]
 script = ExtResource("1_272bh")
-
-[node name="rocket" parent="." unique_id=359267566 instance=ExtResource("1_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036162853, 4.3473454, 13.728679)
-visible = false
-script = ExtResource("2_1bvp3")
 
 [node name="rocketpad" parent="." unique_id=1115138343 instance=ExtResource("3_lquwl")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
@@ -188,15 +171,15 @@ light_energy = 5.336
 [node name="modrocket" parent="." unique_id=1832159564 instance=ExtResource("8_4c57u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, 0)
 script = ExtResource("9_efxa6")
-engine = ExtResource("10_dg77c")
-fuel_tank = SubResource("Resource_2cqfq")
+engine = ExtResource("9_w48qg")
+fuel_tank = ExtResource("10_ycdy4")
 body = ExtResource("12_w48qg")
 nosecone = ExtResource("13_vivmo")
 
 [node name="Camera3D" type="Camera3D" parent="modrocket" unique_id=46454884]
-transform = Transform3D(0.40239123, -0.36299264, 0.8404271, 0.003420834, 0.91862, 0.39512742, -0.9154614, -0.15612084, 0.37088633, 15.03524, 6.1743336, 8.741638)
+transform = Transform3D(0.40239123, -0.36299264, 0.8404271, 0.003420834, 0.91862, 0.39512742, -0.9154614, -0.15612084, 0.37088633, 11.03524, 6.8307185, 5.741638)
 fov = 70.2
 script = ExtResource("3_7mycd")
 
-[connection signal="button_down" from="ui/Cautionborder(250X150Px)/ColorRect/Button" to="rocket" method="_on_button_button_down"]
+[connection signal="button_down" from="ui/Cautionborder(250X150Px)/ColorRect/Button" to="modrocket" method="_on_button_button_down"]
 [connection signal="button_down" from="ui/Cautionborder(250X150Px)/ColorRect/Button" to="modrocket/Camera3D" method="_on_button_button_down"]
