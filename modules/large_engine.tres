@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_bvttj")
-thrust = 1000.0
-fuel_burn_rate = 0.18
+thrust = 1600.0
+fuel_burn_rate = 0.23
 mass = 45.0
 module_scene = ExtResource("1_hp000")
 height = 1.5

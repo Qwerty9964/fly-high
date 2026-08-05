@@ -1,9 +1,11 @@
 extends Node3D
 
-@onready var accelerationlab = $ui/accelerationlab
-@onready var velocitylab = $ui/velocitylab
-@onready var masslab = $ui/masslab
-@onready var heightlab =$ui/heightlab
+@onready var accelerationlab = $ui/flight/accelerationlab
+@onready var velocitylab = $ui/flight/velocitylab
+@onready var masslab = $ui/flight/masslab
+@onready var heightlab =$ui/flight/heightlab
+@onready var fuelleftlab =$ui/flight/fuelleftlab
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +13,7 @@ func _ready() -> void:
 	$modrocket.newacceleration.connect(_on_newacceleration)
 	$modrocket.newmass.connect(_on_newmass)
 	$modrocket.newheight.connect(_on_newheight)
+	$modrocket.fuelleft.connect(_on_newfuelleft)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,6 +32,9 @@ func _on_newmass(mass):
 	
 func _on_newheight(height):
 	heightlab.text = "HEIGHT: %.2f m" % height
+	
+func _on_newfuelleft(fuel):
+	fuelleftlab.text = "FUEL REMAINING: %.2f%%" % fuel
 	
 
 	

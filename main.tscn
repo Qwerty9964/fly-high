@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://gefxp5635qkr" path="res://ground.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dkpjcgjvd5cdb" path="res://cautionborder (250 x 150 px).png" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://2cys6xf5vmls" path="res://modrocket.tscn" id="8_4c57u"]
+[ext_resource type="Resource" uid="uid://bcfmvs1ut3kcy" path="res://modules/advanced_body.tres" id="9_dg77c"]
 [ext_resource type="Script" uid="uid://b6030w3xvp1by" path="res://modrocket.gd" id="9_efxa6"]
-[ext_resource type="Resource" uid="uid://da3nnbfao2brv" path="res://modules/small_engine.tres" id="9_w48qg"]
-[ext_resource type="Resource" uid="uid://c0ottbuj28iuy" path="res://modules/small_tank.tres" id="10_ycdy4"]
-[ext_resource type="Resource" uid="uid://nb0oumr8c8p0" path="res://modules/basic_body.tres" id="12_w48qg"]
-[ext_resource type="Resource" uid="uid://dotqqxh1jdilu" path="res://modules/basic_nosecone.tres" id="13_vivmo"]
+[ext_resource type="Resource" uid="uid://dxxrnwjwxhvgq" path="res://modules/large_engine.tres" id="9_w48qg"]
+[ext_resource type="Resource" uid="uid://6tv0yf63us0" path="res://modules/raptor_cone.tres" id="10_w48qg"]
+[ext_resource type="Resource" uid="uid://be5vaiio4huov" path="res://modules/large_tank.tres" id="10_ycdy4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdbf6"]
 albedo_color = Color(0.20392157, 0.24705882, 0.2901961, 1)
@@ -77,15 +77,22 @@ mesh = SubResource("PlaneMesh_bdbf6")
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=125370618]
 
-[node name="Panel" type="Panel" parent="ui" unique_id=547091482]
+[node name="flight" type="Control" parent="ui" unique_id=2132892074]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="ui/flight" unique_id=547091482]
 z_index = -10
 z_as_relative = false
+layout_mode = 0
 offset_left = 36.0
 offset_top = 103.0
 offset_right = 269.0
 offset_bottom = 469.0
 
-[node name="ColorRect2" type="ColorRect" parent="ui/Panel" unique_id=633761874]
+[node name="ColorRect2" type="ColorRect" parent="ui/flight/Panel" unique_id=633761874]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 11.0
@@ -93,12 +100,12 @@ offset_right = 222.0
 offset_bottom = 352.0
 color = Color(0.28099787, 0.22996211, 0.2157804, 1)
 
-[node name="Cautionborder(250X150Px)" type="Sprite2D" parent="ui" unique_id=636500809]
+[node name="Cautionborder(250X150Px)" type="Sprite2D" parent="ui/flight" unique_id=636500809]
 position = Vector2(157, 154)
 scale = Vector2(0.452, 0.40666667)
 texture = ExtResource("5_7mycd")
 
-[node name="ColorRect" type="ColorRect" parent="ui/Cautionborder(250X150Px)" unique_id=1180080774]
+[node name="ColorRect" type="ColorRect" parent="ui/flight/Cautionborder(250X150Px)" unique_id=1180080774]
 anchors_preset = -1
 anchor_right = 0.231
 anchor_bottom = 0.205
@@ -110,7 +117,7 @@ scale = Vector2(0.8, 0.8)
 color = Color(0.972549, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="ui/Cautionborder(250X150Px)/ColorRect" unique_id=451448227]
+[node name="Button" type="Button" parent="ui/flight/Cautionborder(250X150Px)/ColorRect" unique_id=451448227]
 z_index = 100
 layout_mode = 1
 anchors_preset = -1
@@ -131,33 +138,45 @@ text = "
 LAUNCH"
 metadata/_edit_use_anchors_ = true
 
-[node name="velocitylab" type="Label" parent="ui" unique_id=260208282]
+[node name="velocitylab" type="Label" parent="ui/flight" unique_id=260208282]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 232.0
 offset_right = 174.0
 offset_bottom = 281.0
 text = "VELOCITY: 0m/s"
 
-[node name="accelerationlab" type="Label" parent="ui" unique_id=572330676]
+[node name="accelerationlab" type="Label" parent="ui/flight" unique_id=572330676]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 283.0
 offset_right = 232.0
 offset_bottom = 306.0
 text = "ACCELERATION: 0m/s/s"
 
-[node name="masslab" type="Label" parent="ui" unique_id=1027068004]
+[node name="masslab" type="Label" parent="ui/flight" unique_id=1027068004]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 258.0
 offset_right = 146.0
 offset_bottom = 281.0
 text = "MASS: 1.2kg"
 
-[node name="heightlab" type="Label" parent="ui" unique_id=413448295]
+[node name="heightlab" type="Label" parent="ui/flight" unique_id=413448295]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 308.0
 offset_right = 145.0
 offset_bottom = 331.0
 text = "HEIGHT: 0m"
+
+[node name="fuelleftlab" type="Label" parent="ui/flight" unique_id=438715725]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 333.0
+offset_right = 236.0
+offset_bottom = 356.0
+text = "FUEL REMAINING: 100%"
 
 [node name="ground" parent="." unique_id=578226511 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
@@ -173,13 +192,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4, 0)
 script = ExtResource("9_efxa6")
 engine = ExtResource("9_w48qg")
 fuel_tank = ExtResource("10_ycdy4")
-body = ExtResource("12_w48qg")
-nosecone = ExtResource("13_vivmo")
+body = ExtResource("9_dg77c")
+nosecone = ExtResource("10_w48qg")
 
 [node name="Camera3D" type="Camera3D" parent="modrocket" unique_id=46454884]
 transform = Transform3D(0.40239123, -0.36299264, 0.8404271, 0.003420834, 0.91862, 0.39512742, -0.9154614, -0.15612084, 0.37088633, 11.03524, 6.8307185, 5.741638)
 fov = 70.2
 script = ExtResource("3_7mycd")
 
-[connection signal="button_down" from="ui/Cautionborder(250X150Px)/ColorRect/Button" to="modrocket" method="_on_button_button_down"]
-[connection signal="button_down" from="ui/Cautionborder(250X150Px)/ColorRect/Button" to="modrocket/Camera3D" method="_on_button_button_down"]
+[connection signal="button_down" from="ui/flight/Cautionborder(250X150Px)/ColorRect/Button" to="modrocket" method="_on_button_button_down"]
+[connection signal="button_down" from="ui/flight/Cautionborder(250X150Px)/ColorRect/Button" to="modrocket/Camera3D" method="_on_button_button_down"]

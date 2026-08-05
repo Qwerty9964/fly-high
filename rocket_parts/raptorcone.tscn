@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://db5iq10wg08s2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mf0t"]
-albedo_color = Color(0, 0.21783927, 0.21796915, 1)
+albedo_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
 metallic = 1.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_bdbf6"]
@@ -10,6 +10,7 @@ top_radius = 0.0
 height = 1.3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_va7vk"]
+albedo_color = Color(1, 0.3137255, 0.19607843, 1)
 metallic = 1.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_4mf0t"]

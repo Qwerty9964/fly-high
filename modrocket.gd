@@ -11,6 +11,7 @@ var mass = 0
 var thrust= 0
 var fuelburnrate = 0
 var og_mass
+var og_fuelmass
 
 var light 
 var particles  
@@ -19,6 +20,7 @@ signal newvelocity
 signal newacceleration
 signal newmass
 signal newheight
+signal fuelleft
 
 
 @export var engine: engine_module
@@ -35,7 +37,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	newheight.emit(position.y)
+	newacceleration.emit(acceleration)
+	newmass.emit(mass)
+	newvelocity.emit(velocity)
+	fuelleft.emit(fuelmass/og_fuelmass*100)
 	
 	if launch == true:
 		acceleration=0
@@ -54,18 +61,7 @@ func _process(delta: float) -> void:
 		
 		position.y+=velocity *delta 
 		
-		newacceleration.emit(acceleration)
-		newmass.emit(mass)
-		newvelocity.emit(velocity)
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	
 #helpers
@@ -93,6 +89,7 @@ func modules_configure() -> void:
 	fuelburnrate=engine.fuel_burn_rate
 	fuelmass=fuel_tank.fuel_capacity*0.1
 	og_mass=mass
+	og_fuelmass=fuelmass
 	
 
 
